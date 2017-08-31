@@ -3,6 +3,7 @@ package lab2;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 /**
  * In this lab focus on METHOD encapsulation and fix/add code as necessary.
  * Pay special attention to the following issues:
@@ -34,6 +35,12 @@ public class Employee {
         this.firstName = firstName;
         this.lastName = lastName;
         this.ssn = ssn;
+    }
+    
+   public void employeeCheck() {
+        meetWithHrForBenefitAndSalryInfo();
+        meetDepartmentStaff();     
+        reviewDeptPolicies();
     }
 
     // Assume this must be performed first, and assume that an employee
@@ -83,6 +90,12 @@ public class Employee {
         return firstName;
     }
 
+    private void simpleDateFormat() {
+        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+        String fmtDate = sdf.format(orientationDate);        
+        System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
+            + fmtDate);
+    }
     // setter methods give the developer the power to control what data is
     // allowed through validation.
     
@@ -103,6 +116,9 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
+        if (ssn.length() > 9 || ssn.length() < 9) {     
+            throw new IllegalArgumentException("quantity must be greater than 0...");
+        }
         this.ssn = ssn;
     }
 
