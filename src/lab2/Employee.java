@@ -100,6 +100,7 @@ public class Employee {
     // allowed through validation.
     
     public void setFirstName(String firstName) {
+        
        this.firstName = firstName;
     }
 
@@ -161,6 +162,7 @@ public class Employee {
 
     
     public void setCubeId(String cubeId) {
+        if (cubeId = )
         this.cubeId = cubeId;
     }
 
