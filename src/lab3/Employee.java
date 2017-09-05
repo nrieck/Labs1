@@ -36,7 +36,11 @@ import java.util.Date;
  * @author      Jim Lombardo, WCTC Instructor
  * @version     1.02
  */ 
+
+
 public class Employee {
+    private final String REQUIRED = " is required";
+    
     private String firstName;
     private String lastName;
     private String ssn;
@@ -47,6 +51,7 @@ public class Employee {
     private String cubeId;
     private Date orientationDate;
     private OutputService output;
+    
 
     public Employee(String firstName, String lastName, String ssn) {
         // Using setter method guarantees validation will be performed
@@ -135,7 +140,7 @@ public class Employee {
     // to display an error message -- not the job of this class!
     public void setFirstName(String firstName) {
         if(firstName == null || firstName.isEmpty()) {
-            throw new IllegalArgumentException("first name is required");
+            throw new IllegalArgumentException("first name" + REQUIRED);
         }
         this.firstName = firstName;
     }
@@ -146,7 +151,7 @@ public class Employee {
 
     public void setLastName(String lastName) {
         if(lastName == null || lastName.isEmpty()) {
-            System.out.println("last name is required");
+            throw new IllegalArgumentException("last name " + REQUIRED);
         }
         this.lastName = lastName;
     }
@@ -157,7 +162,7 @@ public class Employee {
 
     public void setSsn(String ssn) {
         if(ssn == null || ssn.length() < 9 || ssn.length() > 11) {
-            System.out.println("ssn is required and must be "
+            throw new IllegalArgumentException("ssn is required and must be "
                     + "between 9 and 11 characters (if hyphens are used)");
         }
         this.ssn = ssn;
@@ -203,7 +208,7 @@ public class Employee {
     
     public void setCubeId(String cubeId) {
         if(cubeId == null || cubeId.isEmpty()) {
-            System.out.println("cube id is required");
+            throw new IllegalArgumentException("cube id " + REQUIRED);
         }
         this.cubeId = cubeId;
     }
@@ -214,7 +219,7 @@ public class Employee {
 
     public void setOrientationDate(Date orientationDate) {
         if(orientationDate == null) {
-            System.out.println("orientationDate is required");
+            throw new IllegalArgumentException("orientationDate " + REQUIRED);
         }
         this.orientationDate = orientationDate;
     }

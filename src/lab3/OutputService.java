@@ -8,14 +8,6 @@ public class OutputService {
     
     private String msg = "";
     
-    public void simpleOutput(String msg) {
-        System.out.println(msg);
-    }
-    
-    public void completeOutput(String msg) {
-        System.out.println(msg);
-    }
-    
     public void addData(String data) {
         msg += data;
     }
