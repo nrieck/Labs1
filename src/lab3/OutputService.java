@@ -6,7 +6,7 @@ package lab3;
  */
 public class OutputService {
     
-    private String report = "";
+    private String msg = "";
     
     public void simpleOutput(String msg) {
         System.out.println(msg);
@@ -14,13 +14,13 @@ public class OutputService {
     
     public void completeOutput(String msg) {
         System.out.println(msg);
-        // sllsdkfjdlkfjdkf
     }
     
     public void addData(String data) {
-        report += data;
+        msg += data;
     }
     
+
     
 //    private Employee employee;
 //    
