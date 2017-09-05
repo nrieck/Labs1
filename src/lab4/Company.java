@@ -5,11 +5,6 @@
  */
 package lab4;
 
-
-/**
- *
- * @author Nick
- */
 public class Company {
     
     private HrWork hr;
@@ -20,7 +15,7 @@ public class Company {
     
     public void hireEmployee(String firstName, String lastName, String ssn) {
         hr.hireEmployee(firstName, lastName, ssn);
-        
+        hr.outputReport(ssn);
     }
 
     public HrWork getHr() {
