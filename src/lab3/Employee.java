@@ -35,7 +35,7 @@ import java.util.Date;
  *
  * @author      Jim Lombardo, WCTC Instructor
  * @version     1.02
- */
+ */ 
 public class Employee {
     private String firstName;
     private String lastName;
@@ -60,7 +60,7 @@ public class Employee {
     /* 
         This should be private because it is useful only to this class and then,
         only as a helper method to other methods. This is method hiding - a type 
-        of encapsulation where we put frequently used code in one place for for
+        of encapsula=tion where we put frequently used code in one place for for
         easy editing later if necessary.
     */
     private String getFormattedDate() {

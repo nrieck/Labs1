@@ -42,7 +42,15 @@ public class Employee {
         return sdf.format(orientationDate);
     }
     
-   public void employeeCheck() {
+    public void firstOrientation(String cubeId) {
+        orientationDate = new Date();
+        meetWithHrForBenefitAndSalryInfo();
+        meetDepartmentStaff();
+        reviewDeptPolicies();
+        moveIntoCubicle(cubeId);
+    }
+    
+   private void employeeCheck() {
         meetWithHrForBenefitAndSalryInfo();
         meetDepartmentStaff();     
         reviewDeptPolicies();
@@ -50,7 +58,7 @@ public class Employee {
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.
-    public void meetWithHrForBenefitAndSalryInfo() {
+    private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;       
         System.out.println(firstName + " " + lastName + " met with Hr on "
             + getFormattedDate());
@@ -58,7 +66,7 @@ public class Employee {
 
     // Assume this must be performed first, and assume that an employee
     // would only do this once, upon being hired.:
-    public void meetDepartmentStaff() {
+    private void meetDepartmentStaff() {
         metDeptStaff = true;        
         System.out.println(firstName + " " + lastName + " met with Dept. Staff on "
             + getFormattedDate());
@@ -67,7 +75,7 @@ public class Employee {
     // Assume this must be performed third. And assume that because department
     // policies may change that this method may need to be called 
     // independently from other classes.
-    public void reviewDeptPolicies() {
+    private void reviewDeptPolicies() {
         reviewedDeptPolicies = true;       
         System.out.println(firstName + " " + lastName + " reviewed Dept policies on "
             + getFormattedDate());
@@ -76,7 +84,7 @@ public class Employee {
     // Assume this must be performed 4th. And assume that because employees
     // sometimes change office locations that this method may need to be called 
     // independently from other classes.
-    public void moveIntoCubicle(String cubeId) {
+    private void moveIntoCubicle(String cubeId) {
         this.cubeId = cubeId;
         this.movedIn = true;       
         System.out.println(firstName + " " + lastName + " moved into cubicle "
@@ -91,7 +99,9 @@ public class Employee {
     // allowed through validation.
     
     public void setFirstName(String firstName) {
-        
+        if (firstName == null) {     
+            throw new IllegalArgumentException("Insert First Name, provided null");
+        }
        this.firstName = firstName;
     }
 
@@ -100,6 +110,9 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
+    if (lastName == null) {     
+            throw new IllegalArgumentException("Insert Last Name, provided null");
+        }
        this.lastName = lastName;
     }
 
@@ -153,7 +166,7 @@ public class Employee {
 
     
     public void setCubeId(String cubeId) {
-        if (cubeId = )
+        
         this.cubeId = cubeId;
     }
 
